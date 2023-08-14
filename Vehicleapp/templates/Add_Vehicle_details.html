@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% extends 'Index_Page.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Basic form elements</h4>
+                  <p class="card-description">
+                    Basic form elements
+                  </p>
+                  <form class="forms-sample" method="post" action="{% url 'Save_details' %}" enctype="multipart/form-data">
+                                            {% csrf_token %}
+
+                    <div class="form-group">
+                      <label for="exampleInputName1">Vehicle Number</label>
+                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="number">
+                    </div>
+
+                                       <div class="form-group">
+                      <label for="exampleSelectGender">Category NAME</label>
+                        <select class="form-control" id="exampleSelectGender" name="type">
+                            <option>Two wheeler</option>
+
+                          <option>Three wheeler</option>
+                          <option>Four wheeler</option>
+
+                        </select>
+                      </div>
+
+
+
+                    <div class="form-group">
+                      <label for="exampleInputCity1">Vehicle Model</label>
+                      <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location" name="model">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Vehicle Description</label>
+                      <textarea class="form-control" id="exampleTextarea1" rows="4" name="description"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>
+
+</body>
+</html>
+{% endblock %}

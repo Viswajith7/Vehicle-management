@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% extends 'Index2_page.html' %}
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Vehicle Management</h4>
+                  <p class="card-description">
+
+                  </p>
+                  <div class="table-responsive pt-3">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>
+                            Vehicle Number
+                          </th>
+                          <th>
+                            Vehicle Type
+                          </th>
+                          <th>
+                            Vehicle Modal
+                          </th>
+                          <th>
+                            Vehicle Description
+                          </th>
+                            <th>
+                                Edit
+                            </th>
+
+
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                                          {% for d in data %}
+
+                        <tr>
+                          <td>
+                            {{d.Vehicle_Number}}
+                          </td>
+                          <td>
+                            {{d.Vehicle_Type}}
+
+                          </td>
+                          <td>
+                            {{d.Vehicle_Model}}
+
+                          </td>
+                          <td>
+                            {{d.Vehicle_Description}}
+
+                          </td>
+                           <form action="{% url 'Edit_admin' dataid=d.id %}">
+                              <td>
+                              <button type="submit" class="btn btn-primary mr-2"> EDIT </button>
+                              </form>
+                               </td>
+
+
+                        </tr>
+
+
+
+
+
+                                         {% endfor %}
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+</body>
+</html>
+{% endblock %}
